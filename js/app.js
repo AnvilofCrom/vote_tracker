@@ -1,38 +1,26 @@
-'use strict'; //makes it more compatible
+'use strict';
+$(document).ready(function(){
 
 var photoArray;
-//Photo Constructor
-// will display images in webpage as clickable
-// need to keep track of votes
-// need to find path - location of
+
 var Photo = function (fileLocation) {
   this.path = fileLocation;
-  this.votes = 0;
+  this.votes = 1;
 }
  Photo.prototype.highlight = function () {
  // highlight a color around the photo
 }
 
-////Instantiate each photo object
-
-
-
 //Tracker Object
-
-var Tracker = function () {
+var Tracker = function() {
 }
 
  Tracker.prototype.waitingForVote = function () {
-  //This looks like State waiting for Vote
-  //receive the click and increment the vote count
-  //increment the vote count
-  //event listener on each photo
-  //highlight = function ()
-  //drawTheChart = function ()
- }
 
-Tracker.prototype.getRandomInt = function() {  //picks two a random pic to display
-// select two random elements from the photo array
+}
+
+Tracker.prototype.getRandomInt = function() {  //picks two random pics to display
+// randomly selects two objects from the Photo array
 console.log("random", Math.floor((Math.random() * (13 - 0) +1) +0));
  // var rand = Math.floor((Math.random() * (13 - 0) +1) +0);
  // var rightPhoto = photoArray[rand];
@@ -72,24 +60,29 @@ CutestKitten.prototype.displayElection = function (election) {
 
 var cutestKitten = new CutestKitten();
 
+// Chart code
+
+var votesData = [
+  {
+    value: 1,
+    color:"#D94272"
+  },
+
+  {
+    value : 1,
+    color : "#FDFFE4"
+  }
+
+];
+
+var votesOptions = {
+  segmentShowStroke : false,
+  animateScale : true
+};
+
+var votes= document.getElementById('kittyVotes').getContext('2d');
+var kittyVotes = new Chart(votes).Pie(votesData, votesOptions);
 
 
-
-
-
-
-
-
-
-//Display.prototype.displayPhotos = function () {
-  //display the random photo
-  //document.writeElementById
-  //prevent picking same photo twice
-  // do an if then statement if(photo1 === photo2), then re-roll
-//}
-
-//}
-//some document get.ElementById = variables to access and manipulate
-// the document (html page)
-//};
+});
 

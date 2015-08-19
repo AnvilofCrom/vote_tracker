@@ -1,0 +1,36 @@
+button {
+  border-color: #990000;
+  border: 25px;
+  border-width: 25px;
+}
+h1,h2 {
+  font-family:'Indie Flower', cursive;
+  text-align: center;
+}
+body {
+  background-color: #CB9ADB;
+}
+
+#new_location {
+  position: fixed;
+  right:100px;
+  top:500px;
+  z-index: 10;
+}
+
+#image1:hover {
+
+  transform: scale(1.75);
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+    /*float: right;*/
+}
+
+.image:hover {
+    transform: rotate(360deg);
+}
